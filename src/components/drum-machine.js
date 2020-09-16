@@ -14,6 +14,10 @@ const DrumMachine = (props) => {
       </div>
 
       <div id="display">
+        <div className="logo">
+          <i className="fab fa-react"></i>
+          <p>Dr.Umpad</p>
+        </div>
         <button>
           <i className="fas fa-minus"></i>
         </button>

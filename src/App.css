@@ -13,11 +13,20 @@ html {
 }
 
 #drum-machine {
-  width: 60%;
+  width: 60rem;
   margin: 0 auto;
   border: 0.5rem solid black;
   border-radius: 0.5rem;
   margin-top: 3rem;
+  -webkit-box-shadow: 0px 0px 40px 0px #4d4c4c;
+          box-shadow: 0px 0px 40px 0px #4d4c4c;
+}
+@media screen and (max-width: 600px) {
+  #drum-machine {
+    width: 100%;
+    max-height: 600px;
+    height: 90vh;
+  }
 }
 #drum-machine .drum-pads {
   display: grid;
@@ -74,6 +83,7 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   height: 10rem;
+  position: relative;
 }
 #drum-machine #display .screen {
   background: #00aafe;
@@ -93,4 +103,20 @@ html {
   margin: 2rem;
   color: #2e2d2d;
   font-size: 2.2rem;
+}
+#drum-machine #display .logo {
+  position: absolute;
+  left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ecebeb;
+}
+#drum-machine #display .logo i {
+  margin-right: 0.5rem;
+}
+@media screen and (max-width: 600px) {
+  #drum-machine #display .logo {
+    display: none;
+  }
 }
