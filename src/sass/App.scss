@@ -51,6 +51,7 @@ html {
       display: block;
       height: 14.5rem;
       position: relative;
+      cursor: pointer;
       background: rgb(61, 61, 61);
       background: radial-gradient(
         circle,
@@ -71,13 +72,18 @@ html {
       .light-indicator {
         width: 2rem;
         height: 1rem;
-        background: rgb(231, 7, 7);
         position: absolute;
         border-radius: 0.2rem;
         bottom: 1.5rem;
         right: 1rem;
-        border: 1px solid black;
-        box-shadow: 0px 0px 10px rgb(175, 173, 173);
+        border: 2px solid black;
+        background: grey;
+        transition: all 200ms ease;
+
+        &.active_true {
+          background: rgb(231, 7, 7);
+          box-shadow: 0px 0px 30px rgb(175, 173, 173);
+        }
       }
     }
   }
@@ -94,6 +100,27 @@ html {
     justify-content: center;
     height: 10rem;
     position: relative;
+
+    .logo {
+      position: absolute;
+      left: 1rem;
+      display: flex;
+      color: rgb(236, 235, 235);
+
+      i {
+        margin-right: 0.5rem;
+      }
+
+      @include small-screen {
+        display: none;
+      }
+    }
+
+    button {
+      padding: 0.5rem;
+      cursor: pointer;
+      box-shadow: 0px 0px 5px rgb(112, 112, 112);
+    }
 
     .screen {
       background: rgb(0, 170, 254);
@@ -113,25 +140,11 @@ html {
 
       #kit-name {
         font-size: 2.2rem;
+        margin-bottom: -0.5rem;
       }
 
       #pad-name {
         font-size: 1.8rem;
-      }
-    }
-
-    .logo {
-      position: absolute;
-      left: 1rem;
-      display: flex;
-      color: rgb(236, 235, 235);
-
-      i {
-        margin-right: 0.5rem;
-      }
-
-      @include small-screen {
-        display: none;
       }
     }
   }

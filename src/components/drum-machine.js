@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Drumpad from "./drum-pad";
 
 const DrumMachine = (props) => {
@@ -59,7 +59,7 @@ const DrumMachine = (props) => {
     },
   ];
 
-  const bankTwo = [
+  const pianoKit = [
     {
       keyCode: 81,
       keyTrigger: "Q",
@@ -116,15 +116,20 @@ const DrumMachine = (props) => {
     },
   ];
 
+  const [kit, setKit] = useState(heaterKit);
+  const [pad, setPad] = useState("Pad Name");
+  const [kitName, setKitName] = useState("Heater Kit");
+
   return (
     <div id="drum-machine">
       <div className="drum-pads">
-        {heaterKit.map((sample, idx) => (
+        {kit.map((sample, idx) => (
           <Drumpad
             sample={sample}
             letter={sample.keyTrigger}
             audio={sample.url}
             key={idx}
+            setPad={setPad}
           />
         ))}
       </div>
@@ -138,8 +143,8 @@ const DrumMachine = (props) => {
           <i className="fas fa-minus"></i>
         </button>
         <div className="screen">
-          <p id="kit-name">KIT NAME</p>
-          <p id="pad-name">PAD NAME</p>
+          <p id="kit-name">{kitName}</p>
+          <p id="pad-name">{pad}</p>
         </div>
         <button>
           <i className="fas fa-plus"></i>
