@@ -105,11 +105,19 @@ html {
       width: 10rem;
       height: 4rem;
       display: flex;
+      flex-flow: column;
       justify-content: center;
       align-items: center;
       margin: 2rem;
       color: rgb(46, 45, 45);
-      font-size: 2.2rem;
+
+      #kit-name {
+        font-size: 2.2rem;
+      }
+
+      #pad-name {
+        font-size: 1.8rem;
+      }
     }
 
     .logo {
