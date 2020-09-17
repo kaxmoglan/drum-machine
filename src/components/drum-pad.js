@@ -24,7 +24,7 @@ const Drumpad = (props) => {
   });
 
   return (
-    <div className={`drum-pad`} onClick={playSound}>
+    <div id={props.sample.id} className={`drum-pad`} onClick={playSound}>
       <p>{props.letter}</p>
       <div className={`light-indicator active_${active}`}></div>
       <audio className="clip" id={props.letter} src={props.audio} />
